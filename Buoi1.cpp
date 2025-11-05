@@ -14,7 +14,7 @@ int main(){
 	//khai bao bien diem- kieu du lieu so thuc
 	double diem = 8.2;
 	printf("nam sinh = %d \n", namSinh)//int - %d
-	printf("diem = %lf \n", diem); //double -  %lf
+//	printf("diem = %lf \n", diem); //double -  %lf
 	return 0;
 }
 
