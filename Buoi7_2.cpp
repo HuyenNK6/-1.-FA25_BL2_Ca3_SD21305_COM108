@@ -1,31 +1,86 @@
 #include <stdio.h>
 #include <stdlib.h>
+//1. hàm khong tra ve, khong tham so truyen vao
+void thucHienBai1(){
+	printf("1. Bai 1\n");
+	//tinh tong so tu 1-> n, dung vong lap for
+	int n;
+	do{
+		printf("Moi nhap so nguyen duong n= ");
+		scanf("%d", &n);
+	}while(n<0);
+	int sum = 0;
+	for ( int i = 1; i <= n ; i++){
+		sum += i;//sum = sum + i; 
+	}
+	printf("Tong tu 1 den %d = %d\n", n, sum);
+}
+void thucHienBai2(){
+	printf("2. Bai 2\n");
+		//tinh tong so CHAN tu 1-> n, dung vong lap for
+	int n;
+	do{
+		printf("Moi nhap so nguyen duong n= ");
+		scanf("%d", &n);
+	}while(n<0);
+	int sum = 0;
+	for ( int i = 1; i <= n ; i++){
+		if(i % 2 == 0){
+			sum += i;//sum = sum + i; 
+		}
+	}
+	printf("Tong so chan tu 1 den %d = %d\n", n, sum);
+}
+void thucHienBai3(){
+	printf("3. Bai 3\n");
+	//nhap tuoi tu 18-50 -> sai nhap lai
+	int tuoi;
+	do{
+		printf("Moi nhap tuoi cua ban: ");
+		scanf("%d", &tuoi);
+		if(tuoi < 18 || tuoi > 50){
+			printf("Moi nhap lai tuoi (18-50)!!\n");
+		}
+	}while(tuoi < 18 || tuoi > 50 ); //tuoi >= 18 && tuoi <= 50 => hop le
+	printf("Tuoi cua ban la %d \n", tuoi);
+}
+void thucHienBai4(){
+	//tu lam
+}
+
 int main(){
-	//tao menu lap di lap lai cho den khi chon 0- Thoat CT
+	//tao menu switch case co vong lap
 	int luaChon;
 	do{
-		printf("--------MENU--------\n");
+		printf("--------MENU------");
 		printf("1. Bai 1\n");
 		printf("2. Bai 2\n");
 		printf("3. Bai 3\n");
 		printf("4. Bai 4\n");
 		printf("5. Bai 5\n");
 		printf("0. Thoat CT\n");
-		printf("Moi nhap lua chon (1-5): ");
+		printf("------------------\n");
+		printf("Moi ban nhap lua chon (1-5): ");
 		scanf("%d", &luaChon);
 		switch(luaChon){
 			case 1:
-				printf("1. Bai 1\n");
+				//goi ham thuc hien bai 1 -> ctrl + space
+				thucHienBai1();
 				break;
 			case 2:
-				printf("2. Bai 2\n");
+				thucHienBai2();
+				break;	
+			case 3:
+				thucHienBai3();
+				break;
+			case 4:
+				thucHienBai4();
 				break;
 			case 0:
-			 	//return 0; //dung ket thuc chuong trinh ham main
-			 	exit(0); //them thu vien #include <stdlib.h>
+				exit(0);//them #include <stdlib.h>
 			default:
-				printf("Moi nhap lai!!!\n");
+				printf("Moi ban nhap lai (1-5)!!!!!\n");
 		}
-	}while(luaChon != 0);
+	}while(luaChon!=0);
 	return 0;
 }
